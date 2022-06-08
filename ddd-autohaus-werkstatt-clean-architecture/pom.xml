@@ -96,12 +96,6 @@
             <artifactId>archunit-junit5</artifactId>
             <version>0.23.1</version>
         </dependency>
-        <dependency>
-            <groupId>de.novatec.clean.architecture</groupId>
-            <artifactId>clean-architecture-fitness-functions</artifactId>
-            <version>0.0.1</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
