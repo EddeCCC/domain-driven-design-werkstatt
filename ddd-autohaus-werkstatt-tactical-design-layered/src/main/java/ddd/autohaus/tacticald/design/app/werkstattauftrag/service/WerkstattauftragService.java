@@ -1,17 +1,19 @@
 package ddd.autohaus.tacticald.design.app.werkstattauftrag.service;
 
-import ddd.autohaus.tacticald.design.app.werkstattauftrag.factory.WerktstattauftragFactory;
+import ddd.autohaus.tacticald.design.app.werkstattauftrag.factory.WerkstattauftragFactory;
 import ddd.autohaus.tacticald.design.app.werkstattauftrag.model.Werkstattauftrag;
 import ddd.autohaus.tacticald.design.app.werkstattauftrag.model.auftraggeber.AuftraggeberTypEnum;
 import ddd.autohaus.tacticald.design.app.werkstattauftrag.model.auftragsstatus.WerkstattauftragstatusEnum;
 import ddd.autohaus.tacticald.design.app.werkstattauftrag.repository.WerkstattauftragRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class WerkstattauftragService {
 
-    private final WerktstattauftragFactory factory;
+    private final WerkstattauftragFactory factory;
     private final WerkstattauftragRepository repository;
 
-    public WerkstattauftragService(WerktstattauftragFactory factory, WerkstattauftragRepository repository) {
+    public WerkstattauftragService(WerkstattauftragFactory factory, WerkstattauftragRepository repository) {
         this.factory = factory;
         this.repository = repository;
     }
@@ -34,5 +36,4 @@ public class WerkstattauftragService {
         Werkstattauftrag werkstattauftrag = this.repository.findById(auftragsnummer);
         werkstattauftrag.auftragsstatusAendern(WerkstattauftragstatusEnum.valueOf(newWerkstattauftragsstatus));
     }
-
 }

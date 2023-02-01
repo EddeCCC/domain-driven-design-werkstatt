@@ -28,8 +28,15 @@ public class Werkstattauftrag {
     public Werkstattauftrag() {
     }
 
-    public Werkstattauftrag(Auftraggeber auftraggeber) {
+    public Werkstattauftrag(long auftragsNummer, Auftraggeber auftraggeber) {
+        this.werkstattauftragsnummer = auftragsNummer;
         this.auftraggeber = auftraggeber;
+    }
+
+    public Werkstattauftrag(long auftragsNummer, Auftraggeber auftraggeber, WerkstattauftragstatusEnum auftragsstatus) {
+        this.werkstattauftragsnummer = auftragsNummer;
+        this.auftraggeber = auftraggeber;
+        this.werkstattauftragsstatus = auftragsstatus;
     }
 
     public Werkstattauftrag(Auftraggeber auftraggeber, Long aktuellerBearbeiter) {
@@ -81,5 +88,4 @@ public class Werkstattauftrag {
                 .orElseThrow(() -> new RuntimeException("Auftragsposition mit Auftragspositionsnummer "
                         + auftragspositionnummer + " nicht gefunden"));
     }
-
 }

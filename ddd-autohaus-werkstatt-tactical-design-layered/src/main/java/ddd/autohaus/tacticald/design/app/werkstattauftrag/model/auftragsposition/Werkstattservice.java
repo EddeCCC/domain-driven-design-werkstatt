@@ -12,6 +12,4 @@ public class Werkstattservice {
     private Long werkstattserviceRef;
     private Arbeitswert arbeitswert;
     private List<Material> materialien;
-
-
 }
